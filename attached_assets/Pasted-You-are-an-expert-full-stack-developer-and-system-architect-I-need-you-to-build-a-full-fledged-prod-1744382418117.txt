@@ -1,0 +1,47 @@
+You are an expert full-stack developer and system architect. I need you to build a full-fledged product titled "High School Dream University Navigator" that assists high school students in planning their path to Ivy League and Russell Group universities. The system should analyze the user's academic status (age, predicted grades, current achievements) and desired university/course to provide tailored recommendations.
+
+The product must include:
+
+1. A Frontend, built with any Replit-supported framework (e.g., React) that includes:
+   - A user-friendly sign-up, login, and profile creation form.
+   - Input fields for age, predicted grades, current achievements, and target university/course.
+   - A dashboard displaying:
+       - A summary of the user’s profile.
+       - A list of recommended extracurricular activities.
+       - Notifications and a calendar/timeline view showing upcoming events and opportunities.
+   - A detailed view for each recommended opportunity that displays:
+       - A comprehensive description.
+       - Direct sign-up buttons and external links.
+       - Detailed information (dates, locations, deadlines) and contextual benefits for the opportunity.
+
+2. A Python Backend (using FastAPI or Flask), organized as multiple micro-agents, including:
+   - **Input Agent:** Collects and validates user input.
+   - **Recommendation Agent:** Analyzes the user profile to identify key extracurricular activities and achievements that align with the target university/course.
+   - **Scraper Agent:** Performs the following steps:
+         a) Conduct separate searches on different types of sources:
+            - Academic Forums (to scrape recommendations).
+            - Dedicated Opportunity Sites.
+            - Admissions Essay Sites (for sample essays and insights).
+         b) Process each source’s results using an LLM to extract the names of the extracurricular concepts (as a list of strings) that are beneficial for the target course.
+         c) Once these overarching concept names are obtained, for each one pass it through an OpenAI LLM to format them into a final web query that searches for specific places, companies, and organizations offering the specific opportunity.
+         d) Properly integrate and use the search API to ensure updated and reliable data is retrieved.
+   - **Opportunity Validation Agent:** Verifies that each identified opportunity is currently active and suitable for high school students.
+   - **Notification Agent:** Handles in-app (and optional email/push) notifications when new opportunities are found.
+   - **Testing Agent:** Implements both unit tests and end-to-end tests to ensure system robustness.
+
+3. Data Flow:
+   - User input is processed by the Recommendation Agent, which directs the Scraper and Query Generation Agents.
+   - The Scraper Agent carries out source-specific searches, processes data via an LLM to obtain overarching extracurricular concept names, and then formats a comprehensive web query.
+   - The retrieved detailed opportunities are validated and then surfaced to the user via the Notification Agent on a dynamic dashboard.
+
+4. Additional Requirements:
+   - Ensure that searches are done separately for forums, dedicated sites, and admissions essay platforms.
+   - Provide detailed error handling, logging, and documentation for each micro-agent and the overall system.
+   - The complete code base must be deployable on Replit with a Python backend and a frontend module.
+
+Please build the complete code base for this project, ensuring that each specialized micro-agent (Input, Recommendation, Scraper, Query Generation, Opportunity Validation, Notification) is clearly defined, modular, and fully integrated. Include thorough instructions for testing and deploying the system on Replit, along with detailed documentation for developers and end-users.
+
+
+Thank you!
+
+
